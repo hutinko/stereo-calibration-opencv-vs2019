@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <CV_ROOT>e:\opencv\opencv_4_1_0</CV_ROOT>
+    <ARCH>x64</ARCH>
+    <COMPILERVER>VC16</COMPILERVER>
+    <CMAKE_TARGET>target</CMAKE_TARGET>
+    <CV_INSTALL>$(CV_ROOT)\$(CMAKE_TARGET)\install</CV_INSTALL>
+    <CV_INC>$(CV_INSTALL)\include</CV_INC>
+    <CV_LIB>$(CV_INSTALL)\$(ARCH)\$(COMPILERVER)\lib</CV_LIB>
+    <CV_BIN>$(CV_INSTALL)\$(ARCH)\$(COMPILERVER)\bin</CV_BIN>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)$(Platform)\bind\</OutDir>
+    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);$(CV_BIN);</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CV_INC);$(SolutionDir);</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(CV_LIB)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="CV_ROOT">
+      <Value>$(CV_ROOT)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ARCH">
+      <Value>$(ARCH)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="COMPILERVER">
+      <Value>$(COMPILERVER)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CMAKE_TARGET">
+      <Value>$(CMAKE_TARGET)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CV_INSTALL">
+      <Value>$(CV_INSTALL)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CV_INC">
+      <Value>$(CV_INC)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CV_LIB">
+      <Value>$(CV_LIB)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="CV_BIN">
+      <Value>$(CV_BIN)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
