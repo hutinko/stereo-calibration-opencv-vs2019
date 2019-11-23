@@ -17,7 +17,7 @@
 
 // 
 #include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/imgproc/types_c.h" // cvtColor CV_BGR2GRAY未声明的标识符
+#include "opencv2/imgproc/types_c.h" // cvtColor CV_BGR2GRAY脦麓脡霉脙梅碌脛卤锚脢露路没
 
 
 #define CV_VERSION_ID CVAUX_STR(CV_MAJOR_VERSION) CVAUX_STR(CV_MINOR_VERSION) CVAUX_STR(CV_SUBMINOR_VERSION)
